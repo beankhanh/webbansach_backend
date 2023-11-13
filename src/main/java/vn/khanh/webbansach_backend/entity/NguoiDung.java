@@ -48,7 +48,7 @@ public class NguoiDung {
     )
     private List<Quyen> danhSachQuyen;
 
-    @OneToMany(mappedBy = "donHang", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private List<DonHang> danhSachDonHang;
 
 }

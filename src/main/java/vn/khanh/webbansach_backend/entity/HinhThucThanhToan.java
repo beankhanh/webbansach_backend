@@ -10,14 +10,14 @@ import java.util.List;
 public class HinhThucThanhToan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ma_hinh_thuc_giao_hang")
-    private int maHinhThucGiaoHang;
-    @Column(name="ten_hinh_thuc_giao_hang")
-    private String tenHinhThucGiaoHang;
+    @Column(name="ma_hinh_thuc_thanh_toan")
+    private int maHinhThucThanhToan;
+    @Column(name="ten_hinh_thuc_thanh_toan")
+    private String tenHinhThucThanhToan;
     @Column(name = "mo_ta")
     private String moTa;
-    @Column(name="chi_phi_giao_hang")
-    private double chiPhiGiaoHang;
-    @OneToMany(mappedBy = "hinhThucGiaoHang",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch = FetchType.LAZY)
+    @Column(name="chi_phi_thanh_toan")
+    private double chiPhiThanhToan;
+    @OneToMany(mappedBy = "hinhThucThanhToan",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch = FetchType.LAZY)
     private List<DonHang> danhSachDonHang;
 }
