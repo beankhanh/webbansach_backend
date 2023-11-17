@@ -9,7 +9,7 @@ public class ChiTietDonHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ma_chi_tiet_don_hang")
-    private int maChiTietDonHang;
+    private Long maChiTietDonHang;
     @Column(name="so_luong")
     private int soLuong;
     @Column(name="gia_ban")

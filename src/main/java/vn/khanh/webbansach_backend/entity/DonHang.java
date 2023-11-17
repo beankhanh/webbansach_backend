@@ -36,7 +36,7 @@ public class DonHang {
     @JoinColumn(name="ma_hinh_thuc_thanh_toan",nullable = false)
     private HinhThucThanhToan hinhThucThanhToan;
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-    @JoinColumn(name="ma_hinh_thuc_gia_hang",nullable = false)
+    @JoinColumn(name="ma_hinh_thuc_giao_hang",nullable = false)
     private HinhThucGiaoHang hinhThucGiaoHang;
 
 }
