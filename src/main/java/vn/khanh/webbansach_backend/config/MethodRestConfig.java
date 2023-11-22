@@ -14,7 +14,7 @@ import vn.khanh.webbansach_backend.entity.TheLoai;
 
 @Configuration
 public class MethodRestConfig implements RepositoryRestConfigurer {
-    private String url="http://localhost:8080";
+    private String url="http://localhost:3000";
     @Autowired
     private EntityManager entityManager;
 
@@ -24,6 +24,10 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
         // Cho phép trả về id
         config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream().map(Type::getJavaType).toArray(Class[]::new));
         // config.exposeIdsFor(TheLoai.class);
+
+        cors.addMapping("/**")
+                .allowedOrigins(url)
+                .allowedMethods("GET","POST","PUT","DELETE");
 
         // Chặn các methods
         HttpMethod[] chanCacPhuongThuc ={
