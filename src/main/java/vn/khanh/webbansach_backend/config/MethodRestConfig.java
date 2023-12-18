@@ -14,10 +14,9 @@ import vn.khanh.webbansach_backend.entity.TheLoai;
 
 @Configuration
 public class MethodRestConfig implements RepositoryRestConfigurer {
-    private String url="http://localhost:3000";
+    private String url = "http://localhost:3000";
     @Autowired
     private EntityManager entityManager;
-
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         // expose ids
@@ -25,9 +24,11 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream().map(Type::getJavaType).toArray(Class[]::new));
         // config.exposeIdsFor(TheLoai.class);
 
+        // CORS configuration
         cors.addMapping("/**")
                 .allowedOrigins(url)
-                .allowedMethods("GET","POST","PUT","DELETE");
+                .allowedMethods("GET", "POST", "PUT", "DELETE");
+
 
         // Chặn các methods
         HttpMethod[] chanCacPhuongThuc ={
@@ -36,13 +37,13 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.PATCH,
                 HttpMethod.DELETE,
         };
-        //disableHttpMethods(TheLoai.class, config, chanCacPhuongThuc);
+        disableHttpMethods(TheLoai.class, config, chanCacPhuongThuc);
 
         // Chặn các method DELETE
         HttpMethod[] phuongThucDelete = {
                 HttpMethod.DELETE
         };
-        //disableHttpMethods(NguoiDung.class, config,phuongThucDelete );
+        disableHttpMethods(NguoiDung.class, config,phuongThucDelete );
     }
 
     private void disableHttpMethods(Class c,
@@ -52,6 +53,5 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
                 .forDomainType(c)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(methods))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(methods));
-    }
     }
 }
