@@ -39,7 +39,7 @@ public class NguoiDung {
     )
     private List<SachYeuThich> danhSachSachYeuThich;
     @ManyToMany(
-            fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}
+            fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}
     )
     @JoinTable(
             name = "nguoidung_quyen",

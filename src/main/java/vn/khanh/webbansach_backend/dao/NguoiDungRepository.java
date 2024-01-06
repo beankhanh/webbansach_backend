@@ -7,4 +7,5 @@ import vn.khanh.webbansach_backend.entity.NguoiDung;
 public interface NguoiDungRepository extends JpaRepository<NguoiDung,Integer> {
     boolean existsByTenDangNhap(String tenDangNhap);
     boolean existsByEmail(String email);
+    NguoiDung findByTenDangNhap(String tenDangNhap);
 }
