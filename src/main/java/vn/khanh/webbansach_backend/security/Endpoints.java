@@ -9,6 +9,7 @@ public class Endpoints {
             "/hinh-anh/**",
             "/nguoi-dung/search/existsByTenDangNhap",
             "/nguoi-dung/search/existsByEmail",
+            "/tai-khoan/kich-hoat",
     };
 
     public static final String[] PUBLIC_POST_ENDPOINS = {

@@ -13,9 +13,14 @@ public class DangKyController {
     @Autowired
     private TaiKhoanService taiKhoanService;
     @CrossOrigin(origins = "http://localhost:3000")
-    @RequestMapping("/dang-ky")
+    @PostMapping("/dang-ky")
     public ResponseEntity<?> dangKyTaiKhoan(@Validated @RequestBody NguoiDung nguoiDung){
         ResponseEntity<?> response = taiKhoanService.dangKyNguoiDung(nguoiDung);
+        return response;
+    }
+    @GetMapping("/kich-hoat")
+    public ResponseEntity<?> kichHoatTaiKhoan(@RequestParam String email, @RequestParam String maKichHoat){
+        ResponseEntity<?> response = taiKhoanService.kichHoatTaiKhoan(email,maKichHoat);
         return response;
     }
 }

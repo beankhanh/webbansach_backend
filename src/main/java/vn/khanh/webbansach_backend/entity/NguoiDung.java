@@ -30,6 +30,10 @@ public class NguoiDung {
     private String diaChiMuaHang;
     @Column(name="dia_chi_giao_hang")
     private String diaChiGiaoHang;
+    @Column(name = "da_kich_hoat")
+    private boolean daKichHoat;
+    @Column(name = "ma_kich_hoat")
+    private String maKichHoat;
     @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY
                 ,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}
     )
@@ -50,5 +54,26 @@ public class NguoiDung {
 
     @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private List<DonHang> danhSachDonHang;
+//    @Override
+//    public String toString() {
+//        return "NguoiDung{" +
+//                "maNguoiDung=" + maNguoiDung +
+//                ", hoDem='" + hoDem + '\'' +
+//                ", ten='" + ten + '\'' +
+//                ", tenDangNhap='" + tenDangNhap + '\'' +
+//                ", matKhau='" + matKhau + '\'' +
+//                ", gioiTinh=" + gioiTinh +
+//                ", email='" + email + '\'' +
+//                ", soDienThoai='" + soDienThoai + '\'' +
+//                ", diaChiMuaHang='" + diaChiMuaHang + '\'' +
+//                ", diaChiGiaoHang='" + diaChiGiaoHang + '\'' +
+//                ", daKichHoat=" + daKichHoat +
+//                ", maKichHoat='" + maKichHoat + '\'' +
+//                ", danhSachSuDanhGia=" + danhSachSuDanhGia +
+//                ", danhSachSachYeuThich=" + danhSachSachYeuThich +
+//                ", danhSachQuyen=" + danhSachQuyen +
+//                ", danhSachDonhang=" + danhSachDonHang +
+//                '}';
+//    }
 
 }
