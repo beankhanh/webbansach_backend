@@ -1,4 +1,4 @@
-package vn.khanh.webbansach_backend.service;
+package vn.khanh.webbansach_backend.service.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,6 +11,7 @@ import vn.khanh.webbansach_backend.dao.NguoiDungRepository;
 import vn.khanh.webbansach_backend.dao.QuyenRepository;
 import vn.khanh.webbansach_backend.entity.NguoiDung;
 import vn.khanh.webbansach_backend.entity.Quyen;
+import vn.khanh.webbansach_backend.service.user.UserService;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -27,6 +27,8 @@ public class DonHang {
     private double chiPhiThanhToan;
     @Column (name="tong_tien")
     private double tongTien;
+    @Column(name = "status")
+    private String status; // Trạng thái của đơn hàng
     @OneToMany(mappedBy = "donHang",fetch = FetchType.LAZY,cascade = {CascadeType.ALL})
     private List<ChiTietDonHang> danhSachChiTietDonHang;
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})

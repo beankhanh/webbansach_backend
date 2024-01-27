@@ -34,6 +34,9 @@ public class NguoiDung {
     private boolean daKichHoat;
     @Column(name = "ma_kich_hoat")
     private String maKichHoat;
+    @Column(name = "avatar", columnDefinition = "LONGTEXT")
+    @Lob
+    private String avatar;
     @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY
                 ,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}
     )

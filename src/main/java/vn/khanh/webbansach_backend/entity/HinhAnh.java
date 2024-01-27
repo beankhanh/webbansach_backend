@@ -15,7 +15,7 @@ public class HinhAnh {
     private String tenHinhAnh;
 
     @Column(name="la_icon")
-    private boolean laIcon;
+    private boolean isIcon;
 
     @Column(name="duong_dan")
     private String duongDan;
@@ -24,7 +24,7 @@ public class HinhAnh {
     @Lob
     private String duLieuAnh;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.DETACH,CascadeType.MERGE})
     @JoinColumn(name = "ma_sach", nullable = false)
     private Sach sach;
 }

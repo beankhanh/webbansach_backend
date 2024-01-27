@@ -37,6 +37,9 @@ public class Sach {
     @Column(name="trung_binh_xep_hang")
     private double trungBinhXepHang;
 
+    @Column(name="phan_tram_giam_gia")
+    private double phanTramGiamGia;
+
     @ManyToMany(
             fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.DETACH,CascadeType.MERGE}
     )
